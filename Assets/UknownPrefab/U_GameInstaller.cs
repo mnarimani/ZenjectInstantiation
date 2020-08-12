@@ -29,7 +29,7 @@ public class CustomFactory : IFactory<Object, C, U_PrefabFacade>
         ZenUtilInternal.GetInjectableMonoBehavioursUnderGameObject(instance, components);
         foreach (MonoBehaviour component in components)
         {
-            _container.InjectGameObjectForComponent(instance, component.GetType(), new[] {c});
+            _container.Inject(component, new[] {c});
         }
 
         return instance.GetComponent<U_PrefabFacade>();
